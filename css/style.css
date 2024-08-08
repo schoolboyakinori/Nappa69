@@ -71,6 +71,10 @@
     z-index: 1;
 }
 
+.logo-hanachan {
+    z-index: 10;
+}
+
 /* 平文一括指定 */
 p {
     padding-top: 20px;
