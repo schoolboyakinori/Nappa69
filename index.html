@@ -5,21 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hana Cafe Nappa69</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Rock+Salt&display=swap');
+    </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script>
+        AOS.init();
+    </script>
+
 </head>
 
 <body>
+    <div class="bg">
+        <div class="main-area">
+            <header>
+                <div class="sp-header">
+                    <div><img class="sp-logo" src="img/Logo.png" alt="Nappa69"></div>
+                </div>
+            </header>
 
-    <header></header>
+            <!-- メインビジュアル -->
+            <div class="mv">
+                <img src="img/mv.png" alt="メインビジュアル">
+            </div>
 
-    <div class="body">
-        <!-- メインビジュアル -->
-        <div class="mv">
-            <img src="img/mv.png" alt="メインビジュアル">
-        </div>
+            <div class="copy-main">
+                <img src="img/Copy-Main.svg" alt="">
+            </div>
 
-        <!-- 紹介文 -->
-        <section class="introduction">
+            <div class="logo-hanachan">
+                <img src="img/logo-hanachan.png" alt="">
+            </div>
+
+            <!-- 紹介文 -->
             <p>
                 手塗りの生成色の壁に木のぬくもりを感じる椅子とテーブル<br>
                 お気に入りのソファーを一席どうぞ。<br>
@@ -40,17 +63,18 @@
                 <br>
                 ゆっくりとした時間が流れる、そんなカフェ空間です。<br>
             </p>
-        </section>
 
-        <!-- メニュー -->
-        <section class="menu">
-            <!-- タイトル画像 -->
-            <div class="main-title-img"></div>
+            <!-- メニュー -->
+            <div class="title"> <img src="img/Petal-Red.svg" alt="">
+            </div>
+            <h1 class="logo">Menu</h1>
+            <span class="subtitle">メニュー</span>
 
-            <p>
+            <p class="margin-killer">
                 花と植物、美味しい珈琲とカフェごはん<br>
                 玄米や有機野菜、旬の野菜を中心に<br>
-                「体に優しい心が嬉しいお料理」を全てのメニューに心を込めて手作りしています。<br>
+                「体に優しい心が嬉しいお料理」を<br>
+                全てのメニューに心を込めて手作りしています。<br>
             </p>
 
             <div class="food1">
@@ -93,14 +117,15 @@
                 定番のスイーツ<br>
                 ガトーショコラ&チーズケーキ<br>
             </p>
-        </section>
+            </>
 
-        <!-- コーヒー -->
-        <section class="coffee">
-            <!-- タイトル画像 -->
-            <div class="coffee-title-img"></div>
+            <!-- コーヒー -->
+            <div class="title"> <img src="img/Petal-Pink.svg" alt="">
+            </div>
+            <h1 class="logo">Coffee</h1>
+            <span class="subtitle">コーヒー</span>
 
-            <p>
+            <p class="margin-killer">
                 コーヒーはご注文を頂いてからお豆を挽き<br>
                 一杯、一杯を丁寧に<br>
                 ハンドドリップで抽出いたします。<br>
@@ -135,28 +160,29 @@
                 「MOTOMACHI COFFEE ROASTERY」が<br>
                 オープンしました。<br>
                 <br>
-                KOSUGI CAFE、HanaCAFE nappa69の珈琲は全てこちらで焙煎しブレンドしてます<br>
-                ので、新鮮なお豆がいつも届きます。<br>
+                KOSUGI CAFE、HanaCAFE nappa69の珈琲は<br>全てこちらで焙煎しブレンドしてますので、
+                <br>新鮮なお豆がいつも届きます。<br>
                 <br>
                 美味しい珈琲をどうぞお楽しみくださいませ。<br>
             </p>
 
-        </section>
 
-        <!-- アクセス   -->
-        <section class="access">
-            <!-- タイトル画像 -->
-            <div class="access-title-img"></div>
+            <!-- アクセス   -->
+            <div class="title"> <img src="img/Petal-Blue.svg" alt="">
+            </div>
+            <h1 class="logo">&nbsp;Access</h1>
+            <span class="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;Nappaへの行き方</span>
 
-            <div class="map-img">
-                マップ
+            <div class="map">
+                <img src="img/Map.png" alt="">
             </div>
 
             <p>
                 HanaCAFE nappa69<br>
                 <br>
                 神奈川川崎市中原区新丸子東1-983-1 <br>
-                ☎️044-872-9288 <br>
+                <br>
+                <span class="phone-number">&phone;044-872-9288</span>
             </p>
 
             <div class="open-time">
@@ -178,11 +204,14 @@
                     お気軽にスタッフにお声をお掛けください。<br>
                 </p>
             </div>
+            <footer>
+                <div class="sp-footer">
 
-        </section>
+                </div>
+            </footer>
+        </div>
     </div>
     <!-- フッター -->
-    <footer></footer>
 
 </body>
 
