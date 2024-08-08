@@ -66,7 +66,7 @@
     margin: auto;
     overflow: hidden;
     box-shadow: 4px 4px 10px 0px #00000040;
-    background: url("../img/paper-texture.png");
+    background: url("../img/paper-texture.webp");
     background-position: center;
     z-index: 1;
 }
