@@ -33,6 +33,8 @@
     background-color: var(--sunflower);
 }
 
+
+
 /* ヘッダー */
 .sp-header {
     display: flex;
@@ -71,8 +73,11 @@
     z-index: 1;
 }
 
+
+
 .logo-hanachan {
     z-index: 10;
+    mix-blend-mode: normal;
 }
 
 /* 平文一括指定 */
@@ -107,7 +112,6 @@ p {
     mix-blend-mode: multiply;
     overflow: hidden;
     position: relative;
-
 }
 
 .copy-main {
