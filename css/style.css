@@ -372,6 +372,11 @@ p {
 
 /* 画面幅が980px以下の場合に適用されるスタイル */
 @media screen and (max-width: 980px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
     .slide {
         display: none;
     }
