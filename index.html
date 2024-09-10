@@ -30,10 +30,33 @@
   <div class="bg">
   </div>
 
+  <!-- ナビゲーション -->
+  <div class="gnav">
+    <div class="gnav-logo"><img src="img/Logo.png" alt=""></div>
+
+    <div class="gnav-content">
+      <a href="#menu" class="logo">Menu</a>
+      <a href="#menu" class="subtitle">メニュー</a>
+      <a href="#coffee" class="logo">Coffee</a>
+      <a href="#coffee" class="subtitle">コーヒー</a>
+      <a href="#access" class="logo">&nbsp;Access</a>
+      <a href="#access" class="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;Nappaへの行き方</a>
+      <div class="sns-area"><img class="sns-logo" src="img/Logo-Instagram.svg" alt="">
+        <img class="sns-logo" src="img/Logo-Twitter.svg" alt="">
+      </div>
+    </div>
+  </div>
+
   <div class="main-area">
     <header>
       <div class="sp-header">
         <div><img class="sp-logo" src="img/Logo.png" alt="Nappa69"></div>
+        <input type="checkbox" class="checkbox">
+        <div class="span-container">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -73,7 +96,7 @@
     </p>
 
     <!-- メニュー -->
-    <div class="title"> <img src="img/Petal-Red.svg" alt="">
+    <div id="menu" class="title"> <img src="img/Petal-Red.svg" alt="">
     </div>
     <h1 class="logo">Menu</h1>
     <span class="subtitle">メニュー</span>
@@ -125,10 +148,10 @@
       定番のスイーツ<br>
       ガトーショコラ&チーズケーキ<br>
     </p>
-    </>
+    </d>
 
     <!-- コーヒー -->
-    <div class="title"> <img src="img/Petal-Pink.svg" alt="">
+    <div id="coffee" class="title"> <img src="img/Petal-Pink.svg" alt="">
     </div>
     <h1 class="logo">Coffee</h1>
     <span class="subtitle">コーヒー</span>
@@ -176,7 +199,7 @@
 
 
     <!-- アクセス   -->
-    <div class="title"> <img src="img/Petal-Blue.svg" alt="">
+    <div id="access" class="title"> <img src="img/Petal-Blue.svg" alt="">
     </div>
     <h1 class="logo">&nbsp;Access</h1>
     <span class="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;Nappaへの行き方</span>
@@ -222,8 +245,52 @@
     </footer>
   </div>
   </div>
-  <!-- フッター -->
 
 </body>
+
+<script>
+  const checkbox = document.querySelector('.checkbox');
+  const gnav = document.querySelector('.gnav');
+  const gnavContents = document.querySelectorAll('.gnav-content');
+
+  checkbox.addEventListener('change', () => {
+    gnav.style.display = checkbox.checked ? 'flex' : 'none';
+  });
+
+  gnavContents.forEach(content => {
+    content.addEventListener('click', (event) => {
+      if (window.matchMedia('(max-width: 980px)').matches) {
+        const targetId = content.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          event.preventDefault(); // デフォルトのリンク動作を防ぐ
+
+          const offset = 40;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+          // スクロールアニメーション
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+
+          // メニューを非表示にする
+          gnav.style.display = 'none';
+          checkbox.checked = false;
+        }
+      }
+    });
+  });
+
+  const mediaQuery = window.matchMedia('(max-width: 980px)');
+  const handleMediaChange = (event) => {
+    if (event.matches) {
+      gnav.style.display = 'flex'; // 初期位置に再表示
+    }
+  };
+
+  handleMediaChange(mediaQuery);
+  mediaQuery.addEventListener('change', handleMediaChange);
+</script>
 
 </html>
