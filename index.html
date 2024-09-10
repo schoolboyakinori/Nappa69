@@ -249,47 +249,45 @@
 </body>
 
 <script>
-  const checkbox = document.querySelector('.checkbox');
-  const gnav = document.querySelector('.gnav');
-  const gnavContents = document.querySelectorAll('.gnav-content');
+  function setupMenu() {
+    const checkbox = document.querySelector('.checkbox');
+    const gnav = document.querySelector('.gnav');
+    const gnavContents = document.querySelectorAll('.gnav-content');
 
-  checkbox.addEventListener('change', () => {
-    gnav.style.display = checkbox.checked ? 'flex' : 'none';
-  });
+    checkbox.addEventListener('change', () => {
+      gnav.style.display = checkbox.checked ? 'flex' : 'none';
+    });
 
-  gnavContents.forEach(content => {
-    content.addEventListener('click', (event) => {
-      if (window.matchMedia('(max-width: 980px)').matches) {
-        const targetId = content.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          event.preventDefault(); // デフォルトのリンク動作を防ぐ
-
-          const offset = 40;
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-
-          // スクロールアニメーション
-          window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth'
-          });
-
-          // メニューを非表示にする
+    gnavContents.forEach(content => {
+      content.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 980px)').matches) {
           gnav.style.display = 'none';
           checkbox.checked = false;
         }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (window.matchMedia('(max-width: 980px)').matches && gnav.style.display === 'flex' && !gnav.contains(event.target) && !checkbox.contains(event.target)) {
+        gnav.style.display = 'none';
+        checkbox.checked = false;
       }
     });
-  });
+  }
 
   const mediaQuery = window.matchMedia('(max-width: 980px)');
-  const handleMediaChange = (event) => {
-    if (event.matches) {
-      gnav.style.display = 'flex'; // 初期位置に再表示
-    }
-  };
 
-  handleMediaChange(mediaQuery);
+  function handleMediaChange(event) {
+    const gnav = document.querySelector('.gnav');
+    if (event.matches) {
+      setupMenu();
+      gnav.style.display = 'none'; // 980px以下のときにgnavを非表示に
+    } else {
+      gnav.style.display = 'flex'; // 980px以上のときにgnavを表示
+    }
+  }
+
+  handleMediaChange(mediaQuery); // 初期状態を反映
   mediaQuery.addEventListener('change', handleMediaChange);
 </script>
 
