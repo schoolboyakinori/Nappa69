@@ -171,17 +171,15 @@ p {
 }
 
 .copy-main {
-    display: block;
-    width: 375px;
-    height: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    object-fit: cover;
-    transform: translateX(5px);
+    display: flex;
+    height: 65px;
+    justify-content: center;
+    margin-top: 30px;
+    /* transform: translateX(5px); */
 }
 
 .logo-hanachan {
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 20px;
     display: flex;
     position: relative;
@@ -295,13 +293,13 @@ p {
 
 .sp-footer {
     display: flex;
+    margin-top: 20px;
     width: 375px;
     height: 170px;
-    background-color: var(--glass);
     justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
 }
+
 
 .footer-logo {
     display: flex;
@@ -311,6 +309,7 @@ p {
 }
 
 .sns-logo {
+    color: var(--coffee);
     display: flex;
     width: 32px;
     height: 32px;
